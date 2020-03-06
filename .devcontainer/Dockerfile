@@ -13,14 +13,11 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 # Set to false to skip installing zsh and Oh My ZSH!
-ARG INSTALL_ZSH="false"
+ARG INSTALL_ZSH="true"
 
 # Location and expected SHA for common setup script - SHA generated on release
 ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/script-library/common-redhat.sh"
 ARG COMMON_SCRIPT_SHA="dev-mode"
-
-# Avoid warnings by switching to noninteractive
-# ENV DEBIAN_FRONTEND=noninteractive
 
 # Configure apt and install packages
 RUN yum update -y \
@@ -35,6 +32,3 @@ RUN yum update -y \
     # Clean up
     && yum autoremove -y \
     && yum clean all -y
-
-# Switch back to dialog for any ad-hoc use of apt-get
-# ENV DEBIAN_FRONTEND=dialog

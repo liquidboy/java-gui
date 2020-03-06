@@ -17,4 +17,5 @@ https://hub.docker.com/_/oraclelinux
 
 ## useful snippets to test stuff out
 
-    vs terminal> docker run -i -t --rm oraclelinux:7-slim
+    local> docker run -i -t --rm oraclelinux:7-slim
+    dc> cat /etc/redhat-release
