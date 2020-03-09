@@ -48,9 +48,14 @@ RUN set -eux \
 # https://gluonhq.com/products/javafx/
 # https://gluonhq.com/download/javafx-13.0.2-sdk-linux/
 
-COPY openjfx-13.0.2_linux-x64_bin-sdk.zip /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
 RUN yum install unzip -y
+
+COPY openjfx-13.0.2_linux-x64_bin-sdk.zip /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
 RUN unzip -d /usr/lib/openjfx /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
 RUN rm /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
-
 ENV PATH_TO_FX=/usr/lib/openjfx/javafx-sdk-13.0.2/lib
+
+COPY openjfx-13.0.2_linux-x64_bin-jmods.zip /tmp/openjfx-13.0.2_linux-x64_bin-jmods.zip
+RUN unzip -d /usr/lib/openjfx /tmp/openjfx-13.0.2_linux-x64_bin-jmods.zip
+RUN rm /tmp/openjfx-13.0.2_linux-x64_bin-jmods.zip
+ENV PATH_TO_FX_MODS=/usr/lib/openjfx/javafx-jmods-13.0.2
