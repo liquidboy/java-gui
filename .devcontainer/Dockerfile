@@ -43,3 +43,14 @@ RUN yum install adoptopenjdk-13-openj9 -y
 RUN set -eux \
     && java -version \
     && javac -version
+
+# javafx
+# https://gluonhq.com/products/javafx/
+# https://gluonhq.com/download/javafx-13.0.2-sdk-linux/
+
+COPY openjfx-13.0.2_linux-x64_bin-sdk.zip /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
+RUN yum install unzip -y
+RUN unzip -d /usr/lib/openjfx /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
+RUN rm /tmp/openjfx-13.0.2_linux-x64_bin-sdk.zip
+
+ENV PATH_TO_FX=/usr/lib/openjfx/javafx-sdk-13.0.2/lib
