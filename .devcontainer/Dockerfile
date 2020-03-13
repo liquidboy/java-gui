@@ -59,3 +59,6 @@ COPY openjfx-14_linux-x64_bin-jmods.zip /tmp/openjfx-14_linux-x64_bin-jmods.zip
 RUN unzip -d /usr/lib/openjfx /tmp/openjfx-14_linux-x64_bin-jmods.zip
 RUN rm /tmp/openjfx-14_linux-x64_bin-jmods.zip
 ENV PATH_TO_FX_MODS=/usr/lib/openjfx/javafx-jmods-14
+
+# javafx samples
+RUN git clone https://github.com/openjfx/samples.git ~/gh/openjfx
