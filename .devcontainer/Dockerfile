@@ -61,4 +61,5 @@ RUN rm /tmp/openjfx-14_linux-x64_bin-jmods.zip
 ENV PATH_TO_FX_MODS=/usr/lib/openjfx/javafx-jmods-14
 
 # javafx samples
-RUN git clone https://github.com/openjfx/samples.git ~/gh/openjfx
+COPY install-samples.sh /tmp/install-samples.sh
+RUN /bin/bash /tmp/install-samples.sh

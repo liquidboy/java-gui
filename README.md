@@ -30,3 +30,6 @@ https://hub.docker.com/_/oraclelinux
     - PATH_TO_FX_MODS = E:\javafx-jmods-13.0.2
 
 [note: this means you can run the exact same code in windows as in linux container]
+
+3.  - build in linux
+    - run from windows eg. https://github.com/openjfx/samples/tree/master/CommandLine/Non-modular/CLI
