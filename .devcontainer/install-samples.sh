@@ -1,1 +1,1 @@
-git clone https://github.com/openjfx/samples.git /workspaces/java-gui/src/openjfx
+git clone https://github.com/openjfx/samples.git /tmp/gh/openjfx
